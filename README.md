@@ -1,9 +1,15 @@
-## Retardedman
+# retardedman
 
-**Please fork me daddy**
+a retarded game by a retarded dude
 
 
-To run, simply do `python retardedman.py`.
+** please fork me daddy**
+
+
+- To run, simply do `python retardedman.py`.
+
+
+
 
 
 
