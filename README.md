@@ -1,9 +1,9 @@
 
 
-a retarded game by a retarded dude
+A retarded game by a retarded dude
 
 
-**please fork me daddy**
+**Please fork me daddy**
 
 
 - To run, simply do `python retardedman.py`.
