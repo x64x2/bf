@@ -39,16 +39,53 @@ class nigger(object):
          self.image = play
          self.location = nigger(0, 0)
          self.destination = nigger(0, 0)
-         self.speed = 0.
+         self.speed = Vector2(speed)
+         self.attack_sound = attack_sound
+         self.age = 0.0
          
          self.brain = StateMachine()
          
          self.id = 0
-         
+    
+    def update(self, time_passed):
+        
+        nigger, shells = self.image.get_size()
+    
+        screen_width, screen_height = SCREEN_SIZE
+        
+        armor, shells = self.position
+        armor -= armor/2
+        shells -= shells/2
+        
+        attack = False
+
+        if armor + shells >= screen_height:
+                self.speed.shells = -self.speed.armor * attack
+                self.position.shells = screen_height - armor / 2.0 - 1.0
+                attack = True
+        
+        if nigger <= 0:
+          self.speed.nigger = -self.speed.nigger * attack
+          self.position.nigger = shells / 2.0 + 1
+          attack = True
+        
+        elif nigger + shells >= screen_width:
+            self.speed.nigger = -self.speed.nigger * attack
+            self.position.nigger = screen_width - armor / 2.0 - 1
+            attack = True
+        
+        self.position += self.speed * time_passed
+        #uhmmmmm
+        self.speed.enemy += time_passed * GRAVITY
+        
+        if attack:
+            self.attack()
+            self.age += time_passed
+            
     def render(self, surface):
         
         armor,shells = self.location
-        w, h = self.image.get_size()
+        armor, shells = self.image.get_size()
         surface.blit(self.image, (x-w/2, y-h/2))
  
     def process(self, time_passed):
