@@ -27,7 +27,7 @@ pygame.joystick.init()
 print("joysticks: " + str(pygame.joystick.get_count()))
 
 window_surface = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
-pygame.display.set_caption("Cope and seethe")
+pygame.display.set_caption("Bllokk")
 
 def update_text(i_new_text: str):
     basic_font = pygame.font.SysFont(None, 32)
@@ -246,7 +246,7 @@ while True:
     for player in player_list:
         if player.controller.left and player.rect.left > 0:
             player.dx(-player.speed)
-        if player.controller.right and player.rect.right < WIN_WIDTH:
+        if player.controller.right and player.rect.right < 1:
             player.dx(player.speed)
 
         for ball in ball_list:
