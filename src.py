@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# Author: Tord (SunyataZero)
 
 import sys
 import pygame.locals
